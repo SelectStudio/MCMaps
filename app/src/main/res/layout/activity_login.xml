@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.select.mcmaps.getstart.LoginActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_height="@dimen/app_bar_height">
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:textSize="@dimen/main_title_size"
+            android:text="@string/title_login" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+      android:orientation="vertical"
+        tools:showIn="@layout/activity_login">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textSize="@dimen/normal_text_size"
+            android:text="@string/text_out" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="bottom"
+        android:background="@color/colorGrey200"
+        android:gravity="right|center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_next"
+            android:textSize="@dimen/next_text_size"
+            android:alpha="0.7"
+            android:onClick="slideOut"
+            android:textColor="@android:color/black"
+            android:paddingRight="@dimen/next_margin"
+            android:paddingLeft="@dimen/next_margin"
+            android:background="?android:attr/selectableItemBackgroundBorderless"/>
+
+    </LinearLayout>
+
+</LinearLayout>

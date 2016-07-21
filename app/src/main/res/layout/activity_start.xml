@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.select.mcmaps.getstart.StartActivity">
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/colorGrey500"
+        android:alpha="0"
+        android:fitsSystemWindows="true"
+        android:layout_height="@dimen/view_height"
+        android:id="@+id/view_statusbar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_loadertitle"
+        android:textSize="@dimen/loader_title_size"
+        android:transitionName="text_loader"
+        android:text="@string/hey_hi_hello" />
+        </LinearLayout>
+</LinearLayout>
