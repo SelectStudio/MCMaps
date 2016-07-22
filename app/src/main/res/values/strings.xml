@@ -5,10 +5,10 @@
     <string name="developed_by">2016 Select Studio</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="text_out">不在开发范围内</string>
-    <string name="title_login">登陆至MCMaps</string>
+    <string name="title_login">登陆至MCPE One</string>
     <string name="text_next">继续</string>
     <string name="text_done">完成</string>
     <string name="title_policy">这是我们的协议</string>
-    <string name="title_done">MCMaps已一切就绪</string>
+    <string name="title_done">MCPE One已一切就绪</string>
     <string name="text_all_done">全部搞定，期待我的精彩表演吧</string>
 </resources>
