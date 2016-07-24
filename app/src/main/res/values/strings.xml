@@ -11,4 +11,9 @@
     <string name="title_policy">这是我们的协议</string>
     <string name="title_done">MCPE One已一切就绪</string>
     <string name="text_all_done">全部搞定，期待我的精彩表演吧</string>
+    <string name="text_name_A">你的MC的用户名是：</string>
+    <string name="text_name_B">，你确定要使用它吗？</string>
+    <string name="mc_required">你需要安装MCPE来继续</string>
+    <string name="version_required">你需要0.15及以上版本的MCPE来继续</string>
+    <string name="xbox_required">你需要登陆至Xbox来继续</string>
 </resources>
