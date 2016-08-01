@@ -23,7 +23,7 @@
         android:layout_marginRight="@dimen/card_margin"
         android:layout_marginTop="@dimen/card_margin"
         android:layout_marginLeft="@dimen/card_margin"
-        android:id="@id/pic"/>
+        android:id="@+id/icon"/>
     <FrameLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
