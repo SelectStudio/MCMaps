@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.select.mcpeone.mainlist.MyApplication;
 import com.select.mcpeone.mainlist.R;
+import com.select.mcpeone.mainlist.classes.ListType;
 import com.select.mcpeone.mainlist.classes.LoadImage;
 import com.select.mcpeone.mainlist.classes.MainBean;;
 import java.util.List;
@@ -17,31 +18,36 @@ import java.util.List;
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.AddView>{
     private List<MainBean> list;
     private int type;
-    public MainAdapter(List<MainBean> list,int type) {
+    public MainAdapter(List<MainBean> list) {
         this.list = list;
-        this.type=type;
     }
+
     @Override
-    public AddView onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public int getItemViewType(int position) {
+        return list.get(position).getType();
+    }
+
+    @Override
+    public AddView onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view;
-        switch (type){
-            case 0:
-               view= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_image, viewGroup, false);
+        switch (viewType) {
+            case ListType.LIST_PIC :
+            view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_image, viewGroup, false);
                 break;
-            case 1:
-                view= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_info, viewGroup, false);
+            case ListType.LIST_INFO :
+                view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_info, viewGroup, false);
                 break;
-            case 2:
-                view= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_normal, viewGroup, false);
+            case ListType.LIST_NORMAL :
+                view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_normal, viewGroup, false);
                 break;
-            case 3:
-                view= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_picbg, viewGroup, false);
+            case ListType.LIST_PICBG :
+                view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_picbg, viewGroup, false);
                 break;
-            case 4:
-                view= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_user, viewGroup, false);
+            case ListType.LIST_USER :
+                view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_user, viewGroup, false);
                 break;
-            default:
-                view= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_image, viewGroup, false);
+           default:
+                view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_image, viewGroup, false);
                 break;
         }
         return new AddView(view);
@@ -49,17 +55,18 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.AddView>{
 
     @Override
     public void onBindViewHolder(final AddView addView, final int position) {
+        type=list.get(position).getType();
         switch (type){
-            case 0:
+            case ListType.LIST_PIC:
                 LoadImage.loadImage(addView.pic,list.get(position).getPic(),true);
                 break;
-            case 1:
+            case ListType.LIST_INFO:
                 LoadImage.loadImage(addView.pic,list.get(position).getPic(),true);
                 LoadImage.loadImage(addView.icon,list.get(position).getIcon(),true);
                 addView.title.setText(list.get(position).getTitle());
                 addView.subTitle.setText(list.get(position).getSubTitle());
                 break;
-            case 2:
+            case ListType.LIST_NORMAL:
                 addView.title.setText(list.get(position).getTitle());
                 addView.subTitle.setText(list.get(position).getSubTitle());
                 if(list.get(position).getIsHide()){
@@ -67,7 +74,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.AddView>{
                 }
                 initList(addView.list,position);
                 break;
-            case 3:
+            case ListType.LIST_PICBG:
                 addView.title.setText(list.get(position).getTitle());
                 addView.subTitle.setText(list.get(position).getSubTitle());
                 if(list.get(position).getIsHide()){
@@ -76,7 +83,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.AddView>{
                 initList(addView.list,position);
                 LoadImage.loadImage(addView.picBg,list.get(position).getPicBg(),true);
                 break;
-            case 4:
+            case ListType.LIST_USER:
                 LoadImage.loadImage(addView.picBg,list.get(position).getPic(),true);
                 LoadImage.loadImage(addView.icon,list.get(position).getIcon(),true);
                 addView.userName.setText(list.get(position).getUserName());
@@ -118,5 +125,10 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.AddView>{
             picBg= (ImageView) itemView.findViewById(R.id.pic_bg);
             userName= (TextView) itemView.findViewById(R.id.user_name);
             list= (RecyclerView) itemView.findViewById(R.id.list);
+            markLevel= (TextView) itemView.findViewById(R.id.mark_level);
         }
+
+
+
+
     }}

@@ -12,40 +12,45 @@ public class MainBean
 	private ArrayList<ListBean> list;
 	private String markLevel;
 	private boolean isHide;
-	
-	public MainBean(String pic){
+	private int type;
+	//PIC
+	public MainBean(String pic,int type){
 		this.pic=pic;
+		this.type=type;
 	}
-	public MainBean(String title,String subTitle,String pic,ArrayList<ListBean> list,boolean isHide){
+	//PICBG
+	public MainBean(String title,String subTitle,String picBg,ArrayList<ListBean> list,boolean isHide,int type){
 		this.title=title;
 		this.subTitle=subTitle;
-		this.pic=pic;
+		this.picBg=picBg;
 		this.list=list;
 		this.isHide=isHide;
+		this.type=type;
 	}
-	public MainBean(String title,String subTitle,ArrayList<ListBean> list,boolean isHide){
+	//NORMAL
+	public MainBean(String title,String subTitle,ArrayList<ListBean> list,boolean isHide,int type){
 		this.title=title;
 		this.subTitle=subTitle;
 		this.list=list;
 		this.isHide=isHide;
+		this.type=type;
+
 	}
-	public MainBean(String title,String subTitle,String userName,String icon,String picBg,ArrayList<ListBean> list,boolean isHide){
-		this.title=title;
-		this.subTitle=subTitle;
+	//USER
+	public MainBean(String userName,String icon,String picBg,ArrayList<ListBean> list,int type){
 		this.picBg=picBg;
 		this.icon=icon;
 		this.userName=userName;
 		this.list=list;
-		this.isHide=isHide;
+		this.type=type;
 	}
-	public MainBean(String title,String subTitle,String userName,String icon,String pic,String markLevel,boolean isHide){
+	//INFO
+	public MainBean(String title,String subTitle,String icon,String pic,int type){
 		this.title=title;
 		this.subTitle=subTitle;
-		this.userName=userName;
 		this.icon=icon;
 		this.pic=pic;
-		this.markLevel=markLevel;
-		this.isHide=isHide;
+		this.type=type;
 	}
 	public void setPic(String pic){
 		this.pic=pic;
@@ -100,5 +105,11 @@ public class MainBean
 	}
 	public String getPicBg(){
 		return picBg;
+	}
+	public void setType(String picBg){
+		this.type=type;
+	}
+	public int getType(){
+		return type;
 	}
 }
